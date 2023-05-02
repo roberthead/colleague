@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "Landing", type: :system do
   before do
@@ -6,7 +6,7 @@ RSpec.describe "Landing", type: :system do
   end
 
   scenario "visiting the root url" do
-    visit '/'
+    visit "/"
 
     expect(page).to have_text("Robert Emerson Head")
   end
