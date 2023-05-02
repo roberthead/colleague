@@ -1,0 +1,25 @@
+# Stories
+
+Coder can use sass #rails-setup
+
+Coder can use haml #rails-setup
+
+Coder can use standard ruby autofixes #rails-setup
+
+Owner can sign in with a password. #authentication
+
+User can add a user story. #stories
+
+User can see a list of user stories. #stories
+
+User can update a user story. #stories
+
+User can mark a user story as complete. #stories
+
+User can delete a user story. #stories
+
+Visitor can see user stories. #stories
+
+Vistor can see user story status #stories
+
+Coder can see that /public/stories.txt is retired in favor of web app stories #stories
