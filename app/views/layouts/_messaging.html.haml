@@ -1,2 +1,7 @@
-%p.notice= notice
-%p.alert= alert
+= turbo_frame_tag "messaging" do
+  - if notice.present?
+    .message.message--notice
+      = notice
+  - if alert.present?
+    .message.message--alert
+      = alert
