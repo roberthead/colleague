@@ -23,3 +23,5 @@ Visitor can see user stories. #stories
 Vistor can see user story status #stories
 
 Coder can see that /public/stories.txt is retired in favor of web app stories #stories
+
+Visitor can see homepage at publicly available URL. #infrastructure
