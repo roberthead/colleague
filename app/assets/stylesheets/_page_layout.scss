@@ -1,0 +1,47 @@
+@import 'variables';
+
+.spread {
+  background: $primary-color;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0 1rem;
+}
+
+.page {
+  position: relative;
+  padding: 0 1rem;
+  background-color: $paper-color;
+  min-height: 100vh;
+  max-width: $page-width;
+  margin: 0 auto;
+
+  isolation: isolate;
+}
+
+h1.navbar__title {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 1rem 0;
+  font-weight: 400;
+  letter-spacing: 0.25rem;
+}
+
+a.navbar__title-link {
+  display: block;
+  text-decoration: none;
+
+  :hover {
+    text-decoration: none;
+  }
+}
+
+.turbo-progress-bar {
+  height: 2pt;
+  background-color: $primary-color;
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .page {
+    padding: 0 2rem;
+  }
+}
