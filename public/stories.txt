@@ -12,6 +12,9 @@ DONE
 Coder can write specs with rspec #rails-setup
 DONE
 
+Visitor can see 'Robert Head' on homepage #content
+DONE
+
 Owner can sign in with a password. #authentication
 
 User can add a user story. #stories
@@ -30,4 +33,4 @@ Vistor can see user story status #stories
 
 Coder can see that /public/stories.txt is retired in favor of web app stories #stories
 
-Visitor can see homepage at publicly available URL. #infrastructure
+Visitor can see site at publicly available URL. #infrastructure
