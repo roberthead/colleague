@@ -9,6 +9,9 @@ DONE
 Coder can use standard ruby autofixes #rails-setup
 DONE
 
+Coder can write specs with rspec #rails-setup
+DONE
+
 Owner can sign in with a password. #authentication
 
 User can add a user story. #stories
