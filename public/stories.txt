@@ -16,6 +16,7 @@ Visitor can see 'Robert Head' on homepage #content
 DONE
 
 Owner can sign in with a password. #authentication
+STARTED
 
 User can add a user story. #stories
 
