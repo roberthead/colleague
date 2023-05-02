@@ -19,20 +19,23 @@ Owner can sign in with a password. #authentication
 - at unlinked url ('users/sign_in')
 DONE
 
-User can add a user story. #stories
+Coder can add a user story. #stories
+DONE
 
-User can see a list of user stories. #stories
+Coder can see a list of user stories. #stories
+DONE
 
-User can update a user story. #stories
+Coder can update a user story. #stories
+DONE
 
-User can mark a user story as complete. #stories
+Coder can mark a user story as complete. #stories
+DONE
 
-User can delete a user story. #stories
+Coder can delete a user story. #stories
+DONE
 
 Visitor can see user stories. #stories
 
 Vistor can see user story status #stories
-
-Coder can see that /public/stories.txt is retired in favor of web app stories #stories
 
 Visitor can see site at publicly available URL. #infrastructure
