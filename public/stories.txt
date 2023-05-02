@@ -7,6 +7,7 @@ Coder can use haml #rails-setup
 DONE
 
 Coder can use standard ruby autofixes #rails-setup
+DONE
 
 Owner can sign in with a password. #authentication
 
