@@ -1,6 +1,7 @@
 # Stories
 
 Coder can use sass #rails-setup
+DONE
 
 Coder can use haml #rails-setup
 
