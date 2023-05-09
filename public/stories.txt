@@ -39,3 +39,10 @@ Visitor can see user stories. #stories
 Vistor can see user story status #stories
 
 Visitor can see site at publicly available URL. #infrastructure
+
+
+
+
+Blog post about:
+`be rspec && rubocop -A && git add .`
+related to Kent Beck's experiments
