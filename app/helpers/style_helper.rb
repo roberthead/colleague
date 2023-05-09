@@ -9,10 +9,10 @@ module StyleHelper
   #   block_element_modifier_classes('a', 'b', 'c') # => ['a__b', 'a__b--c']
   #   block_element_modifier_classes('a', 'b', ['c', 'd']) # => ['a__b', 'a__b--c', 'a__b--d']
   def block_element_modifier_classes(block, element = nil, modifiers = [])
-    block_element = [block, element].select(&:present?).join('__')
+    block_element = [block, element].select(&:present?).join("__")
     [block_element].tap { |css_classes|
       [modifiers].flatten.select(&:present?).map do |modifier|
-        css_classes << [block_element, modifier].join('--')
+        css_classes << [block_element, modifier].join("--")
       end
     }.uniq
   end

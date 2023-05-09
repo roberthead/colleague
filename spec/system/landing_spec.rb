@@ -10,7 +10,7 @@ RSpec.describe "Landing" do
 
     expect(page).to have_text("Robert Emerson Head")
 
-    visit '/stories.txt'
+    visit "/stories.txt"
 
     expect(page).to have_text("DONE")
   end
