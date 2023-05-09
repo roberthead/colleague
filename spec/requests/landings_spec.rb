@@ -4,7 +4,7 @@ RSpec.describe "Landings" do
   describe "GET /index" do
     it "returns http success" do
       get "/landing"
-      expect(response).to have_http_status(:success)
+      expect(response).to redirect_to("/resume")
     end
   end
 end
