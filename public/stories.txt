@@ -34,9 +34,8 @@ DONE
 Coder can delete a user story. #stories
 DONE
 
-Visitor can see user stories. #stories
+User can create a resume
 
-Vistor can see user story status #stories
 
 Visitor can see site at publicly available URL. #infrastructure
 
