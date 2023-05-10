@@ -35,11 +35,24 @@ Visitor can see site title
 DONE
 
 Visitor can navigate to resumes page
+DONE
 
 User can create a resume
+DONE
+
+Owner can update a resume
+
+Owner can delete a resume
+
+Owner can add one or more educational experiences to a resume
+
+Owner can update an educational experience on a resume
+
+Owner can delete an educational experience
+
+Admin can publish a blog post
 
 Visitor can see site at publicly available URL. #infrastructure
-
 
 
 
