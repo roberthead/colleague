@@ -179,4 +179,36 @@ RSpec.describe "Resumes" do
       end
     end
   end
+
+  describe "GET /resumes/:id/edit" do
+    context "when signed in as the owner" do
+      let(:resume) { create(:resume, user: user) }
+
+      before do
+        login_as(user, scope: :user)
+      end
+
+      specify do
+        get "/resumes/#{resume.id}/edit"
+        expect(response).to have_http_status(:success)
+      end
+
+      specify do
+        get "/resumes/#{resume.id}/edit"
+        expect(response).to render_template(:edit)
+      end
+
+      specify do
+        get "/resumes/#{resume.id}/edit"
+        expect(assigns(:resume)).to eq resume
+      end
+    end
+
+    context "when not signed in" do
+      specify do
+        get "/resumes/1/edit"
+        expect(response).to redirect_to(new_user_session_path)
+      end
+    end
+  end
 end

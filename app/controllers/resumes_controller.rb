@@ -1,7 +1,6 @@
 class ResumesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  before_action :require_resume, only: [:show]
-  # before_action :require_owned_resume, only: [:edit, :update, :destroy]
+  before_action :require_resume, only: [:show, :edit, :update, :destroy]
 
   def index
     @resumes = Resume.all.order(created_at: :desc)
@@ -11,13 +10,16 @@ class ResumesController < ApplicationController
   end
 
   def new
+    authorize Resume, :new?
     @resume = current_user.resumes.new
   end
 
   def edit
+    authorize @resume
   end
 
   def create
+    authorize Resume, :create?
     @resume = current_user.resumes.new(resume_params.merge(user: current_user))
     if @resume.save
       redirect_to @resume, notice: I18n.t("resource.created", resource: resource_name).capitalize
@@ -28,21 +30,14 @@ class ResumesController < ApplicationController
   end
 
   def update
+    authorize @resume
   end
 
   def destroy
+    authorize @resume
   end
 
   private
-
-  # def require_owned_resume
-  #   @resume = current_user&.resumes&.find_by(id: params[:id])
-  #   return if @resume
-
-  #   redirect_to(redirect_path, {
-  #     alert: I18n.t("resource.not_found", resource: resource_name).capitalize
-  #   })
-  # end
 
   def require_resume
     @resume = Resume.find_by(id: params[:id]) || current_user&.resumes&.first

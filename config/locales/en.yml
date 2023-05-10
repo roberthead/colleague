@@ -19,5 +19,8 @@ en:
     sign_out: Sign out
   resource:
     created: "%{resource} created"
+    destroyed: "%{resource} deleted"
     not_created: "%{resource} not created"
     not_found: "%{resource} not found"
+    not_updated: "%{resource} not updated"
+    updated: "%{resource} updated"
