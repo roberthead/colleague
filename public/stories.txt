@@ -41,8 +41,10 @@ User can create a resume
 DONE
 
 Owner can update a resume
+DONE
 
 Owner can delete a resume
+DONE
 
 Owner can add one or more educational experiences to a resume
 
