@@ -1,0 +1,6 @@
+= turbo_frame_tag @resume do
+  .resume
+    .resume__header
+      %h2
+        = I18n.t('resumes.edit.header')
+    = render partial: 'form', locals: { resume: @resume }

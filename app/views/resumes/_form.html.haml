@@ -1,5 +1,4 @@
 = form_with model: resume || Resume.new, class: 'form' do |form|
-  = form.hidden_field :user_id, value: current_user.id
   .form__field
     = form.label :field
     = form.text_field :field, placeholder: 'Software Development'

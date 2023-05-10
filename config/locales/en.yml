@@ -18,9 +18,20 @@ en:
     sign_in: Sign in
     sign_out: Sign out
   resource:
-    created: "%{resource} created"
-    destroyed: "%{resource} deleted"
-    not_created: "%{resource} not created"
-    not_found: "%{resource} not found"
-    not_updated: "%{resource} not updated"
-    updated: "%{resource} updated"
+    destroy: Delete
+    edit: Edit
+  resume:
+    confirm_destroy: Are you sure you want to delete this resume?
+    created: Resume created.
+    destroy: Delete
+    destroyed: Resume deleted.
+    not_created: Resume not created.
+    not_destroyed: Resume not deleted.
+    not_found: Resume not found.
+    not_updated: Resume not updated.
+    updated: Resume updated.
+  resumes:
+    new:
+      header: New Resume
+    edit:
+      header: Edit Resume

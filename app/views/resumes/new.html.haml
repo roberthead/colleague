@@ -1,2 +1,6 @@
-%h2 New Resume
-= render partial: 'form', locals: { resume: @resume }
+= turbo_frame_tag @resume do
+  .resume
+    .resume__header
+      %h2
+        = I18n.t('resumes.new.header')
+    = render partial: 'form', locals: { resume: @resume }

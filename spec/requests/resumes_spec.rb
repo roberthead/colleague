@@ -174,7 +174,7 @@ RSpec.describe "Resumes" do
 
         specify do
           post "/resumes", params: params
-          expect(flash.now[:alert]).to eq "Resume not created"
+          expect(flash.now[:alert]).to eq "Resume not created."
         end
       end
     end
@@ -207,6 +207,100 @@ RSpec.describe "Resumes" do
     context "when not signed in" do
       specify do
         get "/resumes/1/edit"
+        expect(response).to redirect_to(new_user_session_path)
+      end
+    end
+  end
+
+  describe "PATCH /resumes/:id" do
+    context "when signed in as the owner" do
+      let(:resume) { create(:resume, user: user) }
+      let(:params) do
+        {
+          resume: {
+            field: "Web Development",
+            profile: "I am a web developer that can help you build stuff"
+          }
+        }
+      end
+
+      before do
+        login_as(user, scope: :user)
+      end
+
+      specify do
+        patch "/resumes/#{resume.id}", params: params
+        expect(response).to redirect_to(assigns(:resume))
+      end
+
+      context "when update fails" do
+        before do
+          allow_any_instance_of(Resume).to receive(:update).and_return(false)
+        end
+
+        specify do
+          patch "/resumes/#{resume.id}", params: params
+          expect(response).to render_template(:edit)
+        end
+
+        specify do
+          patch "/resumes/#{resume.id}", params: params
+          expect(response).to have_http_status(:unprocessable_entity)
+        end
+
+        specify do
+          patch "/resumes/#{resume.id}", params: params
+          expect(flash.now[:alert]).to eq "Resume not updated."
+        end
+      end
+    end
+
+    context "when not signed in" do
+      specify do
+        patch "/resumes/1"
+        expect(response).to redirect_to(new_user_session_path)
+      end
+    end
+  end
+
+  describe "DELETE /resumes/:id" do
+    context "when signed in as the owner" do
+      let(:resume) { create(:resume, user: user) }
+
+      before do
+        login_as(user, scope: :user)
+      end
+
+      specify do
+        delete "/resumes/#{resume.id}"
+        expect(response).to redirect_to(resumes_path)
+      end
+
+      specify do
+        delete "/resumes/#{resume.id}"
+        expect(flash[:notice]).to eq "Resume deleted."
+      end
+
+      context "when destroy fails" do
+        before do
+          allow_any_instance_of(Resume).to receive(:destroy).and_return(false)
+        end
+
+        specify do
+          delete "/resumes/#{resume.id}"
+          expect(response).to render_template(:edit)
+        end
+
+        specify do
+          delete "/resumes/#{resume.id}"
+          expect(flash.now[:alert]).to eq "Resume not deleted."
+        end
+      end
+    end
+
+    context "when not signed in" do
+      specify do
+        delete "/resumes/1"
         expect(response).to redirect_to(new_user_session_path)
       end
     end

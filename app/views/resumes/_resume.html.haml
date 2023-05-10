@@ -1,0 +1,18 @@
+= turbo_frame_tag @resume do
+  .resume
+    .resume__header
+      %h2
+        = @resume.user.name
+      - if @resume.field
+        %h3.subheader
+          = @resume.field
+    - if @resume.profile.present?
+      .resume__profile
+        = @resume.profile
+    - if policy(@resume).edit? || policy(@resume).destroy?
+      .resume__actions
+        - if policy(@resume).edit?
+          = link_to I18n.t('resource.edit'), edit_resume_path(id: @resume.id), class: 'button'
+        - if policy(@resume).destroy?
+          - confirmation_text = I18n.t('resume.confirm_destroy')
+          = button_to I18n.t('resource.destroy'), @resume, method: :delete, data: { 'turbo-confirm': confirmation_text }, class: 'button'

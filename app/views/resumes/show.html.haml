@@ -1,10 +1,1 @@
-.resume
-  .resume__header
-    %h2
-      = @resume.user.name
-    - if @resume.field
-      %h3.subheader
-        = @resume.field
-  - if @resume.profile.present?
-    .resume__profile
-      = @resume.profile
+= render @resume
