@@ -14,7 +14,7 @@ module StyleHelper
       [modifiers].flatten.select(&:present?).map do |modifier|
         css_classes << [block_element, modifier].join("--")
       end
-    }.uniq
+    }.uniq.join(" ")
   end
   alias_method :bem, :block_element_modifier_classes
 end
