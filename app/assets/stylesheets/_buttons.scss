@@ -14,7 +14,13 @@
   }
 
   &--clear {
-    border: $line-width transparent;
+    border: $line-width solid transparent;
     background-color: inherit;
+
+    &:hover {
+      border: $line-width solid white;
+      background-color: white;
+      color: $primary-color;
+    }
   }
 }

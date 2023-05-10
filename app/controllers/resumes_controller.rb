@@ -11,6 +11,7 @@ class ResumesController < ApplicationController
   end
 
   def new
+    @resume = current_user.resumes.new
   end
 
   def edit

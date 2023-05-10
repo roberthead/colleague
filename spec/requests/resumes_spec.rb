@@ -3,6 +3,44 @@ require "rails_helper"
 RSpec.describe "Resumes" do
   let(:user) { create(:user) }
 
+  describe "GET /resumes" do
+    let(:user_resume) { create(:resume, user:) }
+    let(:other_user_resume) { create(:resume) }
+
+    before do
+      user_resume
+      other_user_resume
+    end
+
+    context "when signed in" do
+      before do
+        login_as(user, scope: :user)
+      end
+
+      specify do
+        get "/resumes"
+        expect(response).to have_http_status(:success)
+      end
+
+      specify do
+        get "/resumes"
+        expect(response).to render_template(:index)
+      end
+
+      specify do
+        get "/resumes"
+        expect(assigns(:resumes)).to match_array Resume.all
+      end
+    end
+
+    context "when not signed in" do
+      specify do
+        get "/resumes"
+        expect(response).to have_http_status(:success)
+      end
+    end
+  end
+
   describe "GET /resume" do
     context "when signed in" do
       before do
@@ -65,6 +103,36 @@ RSpec.describe "Resumes" do
       specify do
         get "/resumes/#{resume.id}"
         expect(assigns(:resume)).to eq resume
+      end
+    end
+  end
+
+  describe "GET /resumes/new" do
+    context "when signed in" do
+      before do
+        login_as(user, scope: :user)
+      end
+
+      specify do
+        get "/resumes/new"
+        expect(response).to have_http_status(:success)
+      end
+
+      specify do
+        get "/resumes/new"
+        expect(response).to render_template(:new)
+      end
+
+      specify do
+        get "/resumes/new"
+        expect(assigns(:resume)).to be_a_new Resume
+      end
+    end
+
+    context "when not signed in" do
+      specify do
+        get "/resumes/new"
+        expect(response).to redirect_to(new_user_session_path)
       end
     end
   end

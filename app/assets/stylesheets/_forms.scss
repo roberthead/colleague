@@ -1,0 +1,33 @@
+@import "variables";
+
+.form {
+  display: block;
+  max-width: 32rem;
+
+  margin: 1rem auto;
+  border: $line-width solid $primary-color;
+  border-radius: 0.5rem;
+  background-color: $paper-color;
+  padding: 1rem;
+
+  &__field {
+    margin-bottom: 1rem;
+
+    label {
+      display: block;
+    }
+
+    input[type=text], input[type=email], input[type=password] {
+      width: 100%;
+    }
+
+    textarea {
+      width: 100%;
+      height: 8rem;
+    }
+  }
+
+  &__actions {
+    text-align: right;
+  }
+}

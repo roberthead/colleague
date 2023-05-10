@@ -1,0 +1,28 @@
+@import "variables";
+
+.controller {
+  &--registrations, &--sessions, &--passwords {
+    form {
+      display: block;
+      max-width: 32rem;
+
+      margin: 1rem auto;
+      border: $line-width solid $primary-color;
+      border-radius: 0.5rem;
+      background-color: $paper-color;
+      padding: 1rem;
+
+      .field {
+        margin-bottom: 1rem;
+
+        input[type=text], input[type=email], input[type=password] {
+          width: 100%;
+        }
+      }
+
+      .actions {
+        text-align: right;
+      }
+    }
+  }
+}
