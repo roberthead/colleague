@@ -38,6 +38,7 @@ end
 group :test do
   gem "capybara"
   gem "factory_bot_rails", require: false
+  gem "rails-controller-testing"
   gem "rspec-its"
   gem "shoulda-matchers"
   gem "simplecov", require: false

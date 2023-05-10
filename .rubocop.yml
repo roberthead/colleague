@@ -21,3 +21,9 @@ RSpec:
 RSpec/MultipleExpectations:
   Exclude:
     - spec/system/**/*
+
+RSpec/NestedGroups:
+  Max: 5
+
+RSpec/AnyInstance:
+  Enabled: false
