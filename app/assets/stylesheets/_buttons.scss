@@ -1,0 +1,20 @@
+@import "variables";
+
+.button, input[type=submit], button {
+  padding: 0.25rem 1rem;
+  background-color: white;
+  border: $line-width solid $primary-color;
+  border-radius: 0.25rem;
+  font-weight: 600;
+
+  &:hover, &:active {
+    background-color: $primary-color;
+    color: white;
+    text-decoration: none;
+  }
+
+  &--clear {
+    border: $line-width transparent;
+    background-color: inherit;
+  }
+}

@@ -3,6 +3,10 @@ class ResumesController < ApplicationController
   before_action :require_resume, only: [:show]
   # before_action :require_owned_resume, only: [:edit, :update, :destroy]
 
+  def index
+    @resumes = Resume.all.order(created_at: :desc)
+  end
+
   def show
   end
 

@@ -1,11 +1,13 @@
 .navbar
   %h1.navbar__title
     %a.navbar__title-link{ href: root_path }
-      Robert Emerson Head
-  %ul.navbar__contact-info-list
-    %li.navbar__contact-info-list-item
-      - classes = bem('navbar', 'contact-info-list-item-link', 'github')
-      = link_to('github.com/roberthead', 'https://github.com/roberthead', target: 'github', class: classes)
-    %li.navbar__contact-info-list-item
-      - classes = bem('navbar', 'contact-info-list-item-link', 'email')
-      = link_to('robert.head@gmail.com', 'mailto:robert.head@gmail.com', target: 'email', class: classes)
+      Colleagues
+  %ul.navbar__menu
+    %li.navbar__menu-item
+      = link_to(I18n.t('activerecord.models.resume').pluralize, resumes_path, class: bem('button', nil, 'clear'))
+    - if signed_in?
+      %li.navbar__menu-item
+        = button_to I18n.t("application.sign_out"), destroy_user_session_path, method: :delete, class: 'button'
+    - else
+      %li.navbar__menu-item
+        = link_to I18n.t('application.sign_in'), new_user_session_path, class: 'button'

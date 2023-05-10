@@ -8,7 +8,7 @@ RSpec.describe "Landing" do
   it "displays a name" do
     visit "/"
 
-    expect(page).to have_text("Robert Emerson Head")
+    expect(page).to have_text("Colleagues")
 
     visit "/stories.txt"
 

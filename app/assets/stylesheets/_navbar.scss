@@ -1,27 +1,19 @@
 @import 'variables';
 
 .navbar {
-  border-bottom: 1pt solid $primary-color;
+  border-bottom: $line-width solid $primary-color;
   margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
 
-  &__title {
-    width: fit-content;
-    margin: 0 auto;
-    padding-top: 1rem;
-    line-height: 4rem;
-    font-weight: 400;
-    letter-spacing: 0.15em;
-  }
-
-  &__contact-info-list {
-    display: flex;
-    justify-content: space-around;
-  }
-
-  &__contact-info-list-item {
-    flex: 0 1;
-    margin-bottom: 0.5rem;
-  }
+.navbar__title {
+  flex: 1 1;
+  width: fit-content;
+  margin: 0 auto;
+  line-height: 4rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
 }
 
 a.navbar__title-link {
@@ -30,5 +22,23 @@ a.navbar__title-link {
 
   :hover {
     text-decoration: none;
+  }
+}
+
+ul.navbar__menu {
+  flex: 1 1;
+  margin: 1rem 0;
+
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+li.navbar__menu-item {
+  display: inline-block;
+  align-items: center;
+
+  a {
+    display: inline-block;
   }
 }

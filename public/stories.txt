@@ -12,10 +12,7 @@ DONE
 Coder can write specs with rspec #rails-setup
 DONE
 
-Visitor can see 'Robert Head' on homepage #content
-DONE
-
-Owner can sign in with a password. #authentication
+Visitor can sign in with a password. #authentication
 - at unlinked url ('users/sign_in')
 DONE
 
@@ -34,8 +31,12 @@ DONE
 Coder can delete a user story. #stories
 DONE
 
-User can create a resume
+Visitor can see site title
+DONE
 
+Visitor can navigate to resumes page
+
+User can create a resume
 
 Visitor can see site at publicly available URL. #infrastructure
 

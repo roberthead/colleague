@@ -3,6 +3,9 @@ en:
     models:
       resume: Resume
       user: User
+  application:
+    sign_in: Sign in
+    sign_out: Sign out
   resource:
     created: "%{resource} created"
     not_created: "%{resource} not created"
