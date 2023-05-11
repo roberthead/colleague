@@ -6,6 +6,7 @@
   border: $line-width solid $primary-color;
   border-radius: 0.25rem;
   font-weight: 600;
+  color: $primary-color;
 
   &:hover, &:active {
     background-color: $primary-color;

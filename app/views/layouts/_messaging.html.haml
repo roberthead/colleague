@@ -1,4 +1,2 @@
 = turbo_frame_tag "messaging" do
-  - flash.each do |flash_type, message|
-    %div{ class: bem('messaging', 'message', flash_type) }
-      = message
+  = render MessagingComponent.new(flash: flash)
