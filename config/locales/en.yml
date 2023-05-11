@@ -1,4 +1,7 @@
 en:
+  site:
+    name: Colleague
+    tagline: Let's work, together
   activerecord:
     attributes:
       user:

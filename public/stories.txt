@@ -46,6 +46,9 @@ DONE
 Owner can delete a resume
 DONE
 
+Coder can configure the site name and tagline in the I18n files.
+DONE
+
 Owner can add one or more educational experiences to a resume
 
 Owner can update an educational experience on a resume

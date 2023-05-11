@@ -11,7 +11,6 @@
   flex: 1 1;
   width: fit-content;
   margin: 0 auto;
-  line-height: 4rem;
   font-weight: 400;
   letter-spacing: 0.15em;
 }
@@ -23,6 +22,10 @@ a.navbar__title-link {
   :hover {
     text-decoration: none;
   }
+}
+
+.navbar__tagline {
+  font-size: 1rem;
 }
 
 ul.navbar__menu {

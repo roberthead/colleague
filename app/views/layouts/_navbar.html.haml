@@ -1,7 +1,11 @@
 .navbar
-  %h1.navbar__title
-    %a.navbar__title-link{ href: root_path }
-      Colleagues
+  .navbar__title
+    %h1
+      %a.navbar__title-link{ href: root_path }
+        = I18n.t('site.name', default: 'Colleague')
+    - if I18n.exists?('site.tagline')
+      %h2.navbar__tagline.subheader
+        = I18n.t('site.tagline')
   %ul.navbar__menu
     %li.navbar__menu-item
       - if User.primary_admin
