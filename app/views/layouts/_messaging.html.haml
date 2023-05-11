@@ -1,7 +1,4 @@
 = turbo_frame_tag "messaging" do
-  - if notice.present?
-    .message.message--notice
-      = notice
-  - if alert.present?
-    .message.message--alert
-      = alert
+  - flash.each do |flash_type, message|
+    %div{ class: bem('messaging', 'message', flash_type) }
+      = message
