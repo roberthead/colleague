@@ -5,6 +5,18 @@ RSpec.describe Resume do
     it { is_expected.to belong_to(:user) }
   end
 
+  describe "slugification" do
+    subject(:resume) { build(:resume, user: user, field: "juggler") }
+
+    let(:user) { create(:user, name: "Joseph Thompson") }
+
+    specify do
+      expect {
+        resume.valid?
+      }.to change(resume, :slug).from("").to("joseph-thompson-juggler")
+    end
+  end
+
   describe "#phone" do
     context "when neither the user nor the resume has a phone number" do
       let(:user) { create(:user) }

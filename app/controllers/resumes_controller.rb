@@ -36,7 +36,7 @@ class ResumesController < ApplicationController
     authorize @resume
     if @resume.update(resume_params)
       respond_to do |format|
-        format.html { redirect_to resume_path(id: @resume.id), notice: I18n.t("resume.updated") }
+        format.html { redirect_to resume_path(id: @resume.slug), notice: I18n.t("resume.updated") }
         format.turbo_stream { flash.now[:notice] = I18n.t("resume.updated") }
       end
     else
@@ -61,7 +61,7 @@ class ResumesController < ApplicationController
   private
 
   def require_resume
-    @resume = Resume.find_by(id: params[:id]) || current_user&.resumes&.first
+    @resume = Resume.find_by(slug: params[:id]) || current_user&.resumes&.first
     return if @resume
 
     redirect_to(current_user ? new_resume_path : new_user_session_path)

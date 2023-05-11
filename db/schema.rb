@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_11_155502) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_11_202932) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,6 +23,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_11_155502) do
     t.string "alias_name", limit: 80, default: "", null: false
     t.string "email", limit: 80, default: "", null: false
     t.string "phone", limit: 30, default: "", null: false
+    t.string "slug", default: "", null: false
     t.index ["user_id"], name: "index_resumes_on_user_id"
   end
 

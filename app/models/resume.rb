@@ -1,6 +1,8 @@
 class Resume < ApplicationRecord
   belongs_to :user
 
+  before_validation :slugify
+
   def phone
     super.presence || user.phone
   end
@@ -10,6 +12,16 @@ class Resume < ApplicationRecord
   end
 
   def name
-    alias_name.presence || user.name
+    alias_name.presence || user&.name
+  end
+
+  def to_param
+    slug
+  end
+
+  private
+
+  def slugify
+    self.slug = "#{name} #{field}".parameterize
   end
 end

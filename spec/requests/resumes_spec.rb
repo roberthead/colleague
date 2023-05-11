@@ -91,17 +91,17 @@ RSpec.describe "Resumes" do
       let!(:resume) { create(:resume) }
 
       specify do
-        get "/resumes/#{resume.id}"
+        get "/resumes/#{resume.slug}"
         expect(response).to have_http_status(:success)
       end
 
       specify do
-        get "/resumes/#{resume.id}"
+        get "/resumes/#{resume.slug}"
         expect(response).to render_template(:show)
       end
 
       specify do
-        get "/resumes/#{resume.id}"
+        get "/resumes/#{resume.slug}"
         expect(assigns(:resume)).to eq resume
       end
     end
@@ -189,17 +189,17 @@ RSpec.describe "Resumes" do
       end
 
       specify do
-        get "/resumes/#{resume.id}/edit"
+        get "/resumes/#{resume.slug}/edit"
         expect(response).to have_http_status(:success)
       end
 
       specify do
-        get "/resumes/#{resume.id}/edit"
+        get "/resumes/#{resume.slug}/edit"
         expect(response).to render_template(:edit)
       end
 
       specify do
-        get "/resumes/#{resume.id}/edit"
+        get "/resumes/#{resume.slug}/edit"
         expect(assigns(:resume)).to eq resume
       end
     end
@@ -229,7 +229,7 @@ RSpec.describe "Resumes" do
       end
 
       specify do
-        patch "/resumes/#{resume.id}", params: params
+        patch "/resumes/#{resume.slug}", params: params
         expect(response).to redirect_to(assigns(:resume))
       end
 
@@ -239,17 +239,17 @@ RSpec.describe "Resumes" do
         end
 
         specify do
-          patch "/resumes/#{resume.id}", params: params
+          patch "/resumes/#{resume.slug}", params: params
           expect(response).to render_template(:edit)
         end
 
         specify do
-          patch "/resumes/#{resume.id}", params: params
+          patch "/resumes/#{resume.slug}", params: params
           expect(response).to have_http_status(:unprocessable_entity)
         end
 
         specify do
-          patch "/resumes/#{resume.id}", params: params
+          patch "/resumes/#{resume.slug}", params: params
           expect(flash.now[:alert]).to eq "Resume not updated."
         end
       end
@@ -272,12 +272,12 @@ RSpec.describe "Resumes" do
       end
 
       specify do
-        delete "/resumes/#{resume.id}"
+        delete "/resumes/#{resume.slug}"
         expect(response).to redirect_to(resumes_path)
       end
 
       specify do
-        delete "/resumes/#{resume.id}"
+        delete "/resumes/#{resume.slug}"
         expect(flash[:notice]).to eq "Resume deleted."
       end
 
@@ -287,12 +287,12 @@ RSpec.describe "Resumes" do
         end
 
         specify do
-          delete "/resumes/#{resume.id}"
+          delete "/resumes/#{resume.slug}"
           expect(response).to render_template(:edit)
         end
 
         specify do
-          delete "/resumes/#{resume.id}"
+          delete "/resumes/#{resume.slug}"
           expect(flash.now[:alert]).to eq "Resume not deleted."
         end
       end
