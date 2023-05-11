@@ -1,2 +1,9 @@
-= turbo_frame_tag "messaging" do
-  = render MessagingComponent.new(flash: flash)
+- if flash.present?
+  .messaging
+    - flash.each do |flash_type, message|
+      %div{ class: bem("messaging", "message", flash_type) + " closeable", "data-controller": "closeable" }
+        .messaging__message-text
+          = message
+        .messaging__close-widget{ "data-action": "click->closeable#close" }
+          = link_to("javascript:void(0)", class: "messaging__close-widget") do
+            x

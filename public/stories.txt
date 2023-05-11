@@ -50,6 +50,7 @@ Coder can configure the site name and tagline in the I18n files.
 DONE
 
 Visitor/User can close message.
+DONE
 
 Owner can add one or more educational experiences to a resume
 

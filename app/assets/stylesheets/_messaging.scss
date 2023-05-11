@@ -8,5 +8,15 @@
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
     margin: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      color: inherit;
+
+      :hover {
+        text-decoration: none;
+      }
+    }
   }
 }

@@ -12,6 +12,7 @@
     .spread
       .page
         = render partial: "layouts/navbar"
-        = render partial: "layouts/messaging"
+        = turbo_frame_tag "messaging" do
+          = render partial: "layouts/messaging"
         %main
           = yield
