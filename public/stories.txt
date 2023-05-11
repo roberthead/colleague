@@ -56,7 +56,13 @@ Owner can add one or more educational experiences to a resume
 
 Owner can update an educational experience on a resume
 
-Owner can delete an educational experience
+Owner can delete an educational experience from a resume
+
+Owner can add one or more work experiences to a resume
+
+Owner can update a work experience on a resume
+
+Owner can delete a work experience from a resume
 
 Admin can publish a blog post
 
