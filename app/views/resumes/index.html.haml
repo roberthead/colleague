@@ -1,2 +1,8 @@
 %h2
   = I18n.t("activerecord.models.resume").pluralize
+
+- if @resumes.empty?
+  %p
+    = I18n.t("resumes.index.empty")
+- else
+  = render @resumes

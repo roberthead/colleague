@@ -52,6 +52,20 @@ DONE
 Visitor/User can close message.
 DONE
 
+User can see list of resumes.
+DONE
+
+Owner can delete a resume.
+DONE
+
+Owner can add email address override to resume
+DONE
+
+Owner can add phone number override to resume
+DONE
+
+Owner can add phone number to profile
+
 Owner can add one or more educational experiences to a resume
 
 Owner can update an educational experience on a resume

@@ -8,11 +8,7 @@
         = I18n.t('site.tagline')
   %ul.navbar__menu
     %li.navbar__menu-item
-      - if User.primary_admin
-        - if User.primary_admin.resumes.length > 1
-          = link_to(I18n.t('activerecord.models.resume').pluralize, resumes_path, class: bem('button', nil, 'clear'))
-        - else
-          = link_to(I18n.t('activerecord.models.resume'), '/resume', class: bem('button', nil, 'clear'))
+      = link_to(I18n.t('activerecord.models.resume').pluralize, resumes_path, class: bem('button', nil, 'clear'))
     - if signed_in?
       %li.navbar__menu-item
         = button_to I18n.t("application.sign_out"), destroy_user_session_path, method: :delete, class: 'button'

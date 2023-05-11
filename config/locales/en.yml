@@ -6,12 +6,17 @@ en:
     attributes:
       user:
         admin: Admin
-        email: Email
+        email: Email address
+        name: Full name
         password: Password
         password_confirmation: Password confirmation
+        phone: Phone number
         remember_me: Remember me
       resume:
+        alias_name: Professional name (full name you go by)
+        email: Email address (override)
         field: Field of work
+        phone: Phone number (override)
         profile: Profile or Summary
     models:
       resume: Resume
@@ -34,6 +39,9 @@ en:
     not_updated: Resume not updated.
     updated: Resume updated.
   resumes:
+    index:
+      empty: No resumes found.
+
     new:
       header: New Resume
     edit:

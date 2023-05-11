@@ -3,6 +3,15 @@
     = form.label :field
     = form.text_field :field, placeholder: 'Software Development'
   .form__field
+    = form.label :alias_name
+    = form.text_field :alias_name, placeholder: resume.user&.name
+  .form__field
+    = form.label :email
+    = form.text_field :email, placeholder: resume.user&.email
+  .form__field
+    = form.label :phone
+    = form.text_field :phone, placeholder: resume.user&.phone
+  .form__field
     = form.label :profile
     = form.text_area :profile
   .form__actions
