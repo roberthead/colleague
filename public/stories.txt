@@ -64,13 +64,16 @@ DONE
 Owner can add phone number override to resume
 DONE
 
-Visitor sees meaningful info in the URL
+Owner can change name on profile
+DONE
+
+Owner can change email on profile
+DONE
 
 Owner can add phone number to profile
+DONE
 
-Owner can add pronouns to profile
-
-Owner can add / override pronouns on resume
+Visitor sees meaningful info in the URL
 
 Owner can add one or more educational experiences to a resume
 
@@ -83,6 +86,10 @@ Owner can add one or more work experiences to a resume
 Owner can update a work experience on a resume
 
 Owner can delete a work experience from a resume
+
+Owner can add pronouns to profile
+
+Owner can add / override pronouns on resume
 
 Admin can publish a blog post
 
