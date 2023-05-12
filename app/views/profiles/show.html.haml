@@ -12,7 +12,7 @@
         = form.text_field :name
       %div{ class: bem("form", "field", "email") }
         = form.label :email
-        = form.text_field :email
+        = form.text_field :email, disabled: true
       %div{ class: bem("form", "field", "phone") }
         = form.label :phone
         = form.text_field :phone
