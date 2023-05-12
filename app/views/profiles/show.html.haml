@@ -2,6 +2,10 @@
   %h2 Profile
 
   .form
+    %h3
+      Contact Info
+    %p
+      Update your default contact information.
     = form_with model: current_user, url: profile_path, method: :patch do |form|
       %div{ class: bem("form", "field", "name") }
         = form.label :name
