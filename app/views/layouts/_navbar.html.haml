@@ -8,10 +8,10 @@
         = I18n.t('site.tagline')
   %ul.navbar__menu
     %li.navbar__menu-item
-      = link_to(I18n.t('activerecord.models.resume').pluralize, resumes_path, class: bem('button', nil, 'clear'))
+      = link_to I18n.t('activerecord.models.resume').pluralize, resumes_path
     - if signed_in?
       %li.navbar__menu-item
-        = link_to I18n.t("application.profile"), profile_path, class: bem('button', nil, 'clear')
+        = link_to I18n.t("application.profile"), profile_path
       %li.navbar__menu-item
         = button_to I18n.t("application.sign_out"), destroy_user_session_path, method: :delete, class: 'button'
     - elsif User.count.positive?
