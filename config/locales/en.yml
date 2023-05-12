@@ -22,9 +22,13 @@ en:
       resume: Resume
       user: User
   application:
+    profile: Profile
     sign_up: Sign up
     sign_in: Sign in
     sign_out: Sign out
+  profile:
+    not_updated: Profile not updated.
+    updated: Profile updated.
   resource:
     destroy: Delete
     edit: Edit

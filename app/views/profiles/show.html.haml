@@ -1,0 +1,16 @@
+.profile
+  %h2 Profile
+
+  .form
+    = form_with model: current_user, url: profile_path, method: :patch do |form|
+      %div{ class: bem("form", "field", "name") }
+        = form.label :name
+        = form.text_field :name
+      %div{ class: bem("form", "field", "email") }
+        = form.label :email
+        = form.text_field :email
+      %div{ class: bem("form", "field", "phone") }
+        = form.label :phone
+        = form.text_field :phone
+      %div{ class: bem("form", "actions") }
+        = form.submit "Save"
