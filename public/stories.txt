@@ -68,6 +68,10 @@ Visitor sees meaningful info in the URL
 
 Owner can add phone number to profile
 
+Owner can add pronouns to profile
+
+Owner can add / override pronouns on resume
+
 Owner can add one or more educational experiences to a resume
 
 Owner can update an educational experience on a resume
