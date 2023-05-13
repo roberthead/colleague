@@ -1,4 +1,7 @@
 = form_with model: resume || Resume.new, class: 'form' do |form|
+  .form__header
+    %h2
+      = I18n.t('resumes.edit.overview_form_header')
   .form__field
     = form.label :field
     = form.text_field :field, placeholder: 'Software Development'

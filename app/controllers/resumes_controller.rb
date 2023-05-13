@@ -41,7 +41,7 @@ class ResumesController < ApplicationController
       end
     else
       flash.now[:alert] = I18n.t("resume.not_updated")
-      render(:edit, status: :unprocessable_entity)
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -54,7 +54,7 @@ class ResumesController < ApplicationController
       end
     else
       flash.now[:alert] = I18n.t("resume.not_destroyed")
-      render(:edit, status: :unprocessable_entity)
+      render :edit, status: :unprocessable_entity
     end
   end
 

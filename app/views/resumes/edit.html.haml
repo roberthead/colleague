@@ -3,4 +3,6 @@
     .resume__header
       %h2
         = I18n.t('resumes.edit.header')
-    = render partial: 'form', locals: { resume: @resume }
+    = render partial: 'overview_form', locals: { resume: @resume }
+    - if @resume.persisted?
+      = render partial: "employers"
