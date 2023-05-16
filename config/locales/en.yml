@@ -4,6 +4,16 @@ en:
     tagline: Let's work, together
   activerecord:
     attributes:
+      employer:
+        name: Name
+        location: Location
+        url: Website
+      resume:
+        alias_name: Professional name (full name you go by)
+        email: Email address (override)
+        field: Field of work
+        phone: Phone number (override)
+        profile: Profile or Summary
       user:
         admin: Admin
         email: Email address
@@ -12,12 +22,6 @@ en:
         password_confirmation: Password confirmation
         phone: Phone number
         remember_me: Remember me
-      resume:
-        alias_name: Professional name (full name you go by)
-        email: Email address (override)
-        field: Field of work
-        phone: Phone number (override)
-        profile: Profile or Summary
     models:
       resume: Resume
       user: User
@@ -37,23 +41,32 @@ en:
     not_found: Employer not found.
     not_updated: Employer not updated.
     updated: Employer updated.
+  employers:
+    new:
+      header: New Employer
+    edit:
+      header: Edit Employer
   profile:
     not_updated: Profile not updated.
     updated: Profile updated.
   resource:
     destroy: Delete
+    destroy_resource: Delete %{resource}
     edit: Edit
+    edit_resource: Edit %{resource}
   resume:
     confirm_destroy: Are you sure you want to delete this resume?
     created: Resume created.
-    destroy: Delete
     destroyed: Resume deleted.
     not_authorized: Not authorized to manage this resume.
     not_created: Resume not created.
     not_destroyed: Resume not deleted.
     not_found: Resume not found.
     not_updated: Resume not updated.
+    overview: Overview
+    profile: Profile
     updated: Resume updated.
+    work_experience: Work Experience
   resumes:
     index:
       empty: No resumes found.

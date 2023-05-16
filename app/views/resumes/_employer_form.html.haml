@@ -1,0 +1,14 @@
+= turbo_frame_tag employer do
+  .employer
+    .employer__info.employer__info--name
+      = employer.name
+    - if employer.location.present?
+      .employer__info.employer__info--location
+        = employer.location
+    - if employer.url.present?
+      .employer__info.employer__info--url
+        = link_to(employer.url, employer.url, target: employer.name)
+    .employer__actions
+      = link_to 'Edit', edit_resume_employer_path(resume_id: employer.resume, id: employer), class: 'button'
+      - confirmation_text = I18n.t('employer.confirm_destroy')
+      = button_to I18n.t('resource.destroy'), [employer.resume, employer], method: :delete, data: { 'turbo-confirm': confirmation_text }, class: 'button'

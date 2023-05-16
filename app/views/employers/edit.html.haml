@@ -1,6 +1,6 @@
-= form_with url: resume_employer_path([@employer.resume, @employer]), model: @employer, class: "form" do |form|
-  .form__field
-    = form.label :name
-    = form.text_field :name
-  .form_actions
-    = form.submit "Update"
+= turbo_frame_tag @employer do
+  .employer
+    .employer__header
+      %h3
+        = I18n.t('employers.edit.header')
+    = render partial: 'form', locals: { employer: @employer }

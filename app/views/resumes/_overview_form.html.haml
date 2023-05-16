@@ -1,7 +1,5 @@
-= form_with model: resume || Resume.new, class: 'form' do |form|
-  .form__header
-    %h2
-      = I18n.t('resumes.edit.overview_form_header')
+- classes = bem("form", nil, "resume-overview")
+= form_with model: resume || Resume.new, class: classes do |form|
   .form__field
     = form.label :field
     = form.text_field :field, placeholder: 'Software Development'
@@ -14,8 +12,5 @@
   .form__field
     = form.label :phone
     = form.text_field :phone, placeholder: resume.user&.phone
-  .form__field
-    = form.label :profile
-    = form.text_area :profile
   .form__actions
     = form.submit 'Save', class: 'button'

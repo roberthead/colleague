@@ -7,14 +7,14 @@ class UserPolicy < ApplicationPolicy
     true
   end
 
-  def update?
-    user == record
+  def create?
+    admin?
   end
 
-  def destroy?
-    return false if user.blank?
+  private
 
-    user == record || user.admin?
+  def owner?
+    user == record
   end
 
   class Scope < Scope

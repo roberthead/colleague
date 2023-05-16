@@ -5,8 +5,20 @@ class Employer < ApplicationRecord
 
   validates :name, presence: true
 
+  delegate :slug, to: :resume, prefix: true
+
   def to_param
     slug
+  end
+
+  def smart_url
+    return if url.blank?
+
+    if /\Ahttps?:\/\//.match?(url)
+      url
+    else
+      "https://#{url}"
+    end
   end
 
   private

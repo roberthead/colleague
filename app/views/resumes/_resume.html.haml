@@ -14,12 +14,23 @@
         %div{ class: bem("resume", "contact-info-item", "phone") }
           = resume.phone
     - if resume.profile.present?
-      .resume__profile
-        = resume.profile
+      .resume__section
+        .resume__section-title
+          = I18n.t('resume.profile')
+        .resume__section-content
+          = resume.profile
+    - if resume.employers.present?
+      .resume__section
+        .resume__section-title
+          = I18n.t('resume.work_experience')
+        .resume__section-content
+          = render resume.employers
     - if policy(resume).edit? || policy(resume).destroy?
       .resume__actions
         - if policy(resume).edit?
-          = link_to I18n.t('resource.edit'), edit_resume_path(id: resume.slug), class: 'button'
+          - button_text = I18n.t('resource.edit_resource', resource: I18n.t('activerecord.models.resume'))
+          = link_to button_text, edit_resume_path(id: resume.slug), class: 'button'
         - if policy(resume).destroy?
+          - button_text = I18n.t('resource.destroy_resource', resource: I18n.t('activerecord.models.resume'))
           - confirmation_text = I18n.t('resume.confirm_destroy')
-          = button_to I18n.t('resource.destroy'), resume, method: :delete, data: { 'turbo-confirm': confirmation_text }, class: 'button'
+          = button_to button_text, resume, method: :delete, data: { 'turbo-confirm': confirmation_text }, class: 'button'

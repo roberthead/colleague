@@ -1,7 +1,9 @@
 $desktop-breakpoint: 768px;
-$page-width: 960px;
+$page-width: 60rem; // 960px
 $primary-color: #365c70;
-$text-color: mix(#333333, black, 10%);
+$grey: #555555;
+$text-color: mix($grey, black, 10%);
+$softened-text: $grey;
 $link-text-color: $primary-color;
 $paper-color: #FAF8EF;
 $line-width: 1.25pt;

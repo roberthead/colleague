@@ -25,8 +25,8 @@ RSpec.describe ResumePolicy do
   end
 
   permissions :new?, :create? do
-    it { is_expected.not_to permit(visitor, record) }
-    it { is_expected.to permit(user, record) }
+    it { is_expected.not_to permit(visitor) }
+    it { is_expected.to permit(user) }
   end
 
   permissions :edit?, :update? do

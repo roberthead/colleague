@@ -24,13 +24,13 @@ RSpec.describe User do
   describe "#name" do
     context "when name is not set" do
       context "when email username is simple" do
-        let(:user) { create(:user, email: "jimmy@jimmyjames.com") }
+        let(:user) { create(:user, email: "jimmy@jimmyjames.com", name: "") }
 
         specify { expect(user.name).to eq("Jimmy") }
       end
 
       context "when email username contains non-word characters" do
-        let(:user) { create(:user, email: "first.last@gmail.com") }
+        let(:user) { create(:user, email: "first.last@gmail.com", name: "") }
 
         specify { expect(user.name).to eq("First Last") }
       end

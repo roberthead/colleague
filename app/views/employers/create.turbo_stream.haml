@@ -1,0 +1,3 @@
+= turbo_stream.replace "messaging", partial: "layouts/messaging"
+= turbo_stream.append "employers", partial: "resumes/employer_form", locals: { employer: @employer }
+= turbo_stream.replace "new_employer", partial: "resumes/add_employer", locals: { resume: @employer.resume }

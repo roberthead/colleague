@@ -1,0 +1,14 @@
+- classes = "form form--employer"
+= form_with model: [employer.resume, employer], class: classes do |form|
+  = render partial: 'shared/validation_errors', locals: { record: employer }
+  .form__field
+    = form.label :name, I18n.t('activerecord.attributes.employer.name')
+    = form.text_field :name, class: 'form__input'
+  .form__field
+    = form.label :location, I18n.t('activerecord.attributes.employer.location')
+    = form.text_field :location, class: 'form__input'
+  .form__field
+    = form.label :url, I18n.t('activerecord.attributes.employer.url')
+    = form.text_field :url, class: 'form__input'
+  .form__actions
+    = form.submit class: 'button'

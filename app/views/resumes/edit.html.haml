@@ -3,6 +3,22 @@
     .resume__header
       %h2
         = I18n.t('resumes.edit.header')
-    = render partial: 'overview_form', locals: { resume: @resume }
+    .resume__section
+      .resume__section-title
+        = I18n.t('resume.overview')
+      .resume__section-content
+        = render partial: 'overview_form', locals: { resume: @resume }
+    .resume__section
+      .resume__section-title
+        = I18n.t('resume.profile')
+      .resume__section-content
+        = render partial: 'profile_form', locals: { resume: @resume }
     - if @resume.persisted?
-      = render partial: "employers"
+      .resume__section
+        .resume__section-title
+          = I18n.t('resume.work_experience')
+        .resume__section-content
+          = turbo_frame_tag "employers" do
+            - @resume.employers.each do |employer|
+              = render partial: 'resumes/employer_form', locals: { employer: }
+          = render partial: 'resumes/add_employer', locals: { resume: @resume }

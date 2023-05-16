@@ -15,15 +15,27 @@
   &__contact-info {
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin: 1rem 0;
+    position: relative;
+    top: -0.5rem;
   }
 
   &__contact-info-item {
     flex: 0 1 fit-content;
   }
 
-  &__profile {
+  &__section {
     margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__section-title {
+    font-weight: 600;
+    color: $softened-text;
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
   }
 
   &__actions {
@@ -43,6 +55,19 @@
     &__contact-info {
       flex-direction: row;
       justify-content: space-around;
+    }
+
+    &__section {
+      flex-direction: row;
+      gap: 1rem;
+    }
+
+    &__section-title {
+      flex: 0 0 15rem;
+    }
+
+    &__section-content {
+      flex: 1 1 45rem;
     }
   }
 }

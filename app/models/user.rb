@@ -6,8 +6,10 @@ class User < ApplicationRecord
 
   has_many :resumes, dependent: :destroy
 
-  before_save :ensure_name
+  before_validation :ensure_name
   before_create :ensure_primary_admin
+
+  validates :name, presence: true
 
   def self.primary_admin
     where(admin: true).order(:created_at).first

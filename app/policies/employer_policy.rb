@@ -8,17 +8,16 @@ class EmployerPolicy < ApplicationPolicy
   end
 
   def create?
-    user.present?
+    owner?
   end
 
-  def update?
-    user == record.user
-  end
+  private
 
-  def destroy?
-    return false if user.blank?
+  def owner?
+    return false unless user
+    return false unless record&.resume
 
-    user == record.user || user.admin?
+    user == record.resume.user
   end
 
   class Scope < Scope

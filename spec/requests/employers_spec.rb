@@ -113,7 +113,7 @@ RSpec.describe "Employers" do
 
       specify do
         post "/resumes/#{resume.slug}/employers", params: {employer: {name: "WNYX"}}
-        expect(response).to redirect_to(resume_employers_path(resume_id: resume.slug, id: Employer.last))
+        expect(response).to redirect_to(resume_employer_path(resume, Employer.last))
       end
 
       context "when the params are invalid" do

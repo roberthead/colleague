@@ -1,0 +1,7 @@
+- classes = bem("form", nil, "resume-profile")
+= form_with model: resume || Resume.new, class: classes do |form|
+  .form__field
+    = form.label :profile
+    = form.text_area :profile
+  .form__actions
+    = form.submit 'Save', class: 'button'

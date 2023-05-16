@@ -19,18 +19,28 @@ class EmployersController < ApplicationController
   end
 
   def create
+    authorize resume, :edit?
     @employer = resume.employers.new(employer_params)
-
     if @employer.save
-      redirect_to resume_employers_path(resume_id: resume.slug, id: @employer.slug), notice: I18n.t("employer.created")
+      respond_to do |format|
+        format.html { redirect_to [resume, employer], notice: I18n.t("employer.created") }
+        format.turbo_stream { flash.now[:notice] = I18n.t("employer.created") }
+      end
     else
-      render :new, alert: I18n.t("employer.not_created")
+      flash.now[:alert] = I18n.t("employer.not_created")
+      render(:new, status: :unprocessable_entity)
     end
   end
 
   def update
+    authorize resume, :edit?
     if employer.update(employer_params)
-      redirect_to resume_employer_path(resume, employer), notice: I18n.t("employer.updated")
+      respond_to do |format|
+        format.html {
+          redirect_to resume_employer_path(resume, employer), notice: I18n.t("employer.updated")
+        }
+        format.turbo_stream { flash.now[:notice] = I18n.t("employer.updated") }
+      end
     else
       flash.now[:alert] = I18n.t("employer.not_updated")
       render :edit, status: :unprocessable_entity
@@ -38,8 +48,16 @@ class EmployersController < ApplicationController
   end
 
   def destroy
-    employer.destroy
-    redirect_to resume_employers_path(resume), notice: I18n.t("employer.deleted")
+    authorize resume, :edit?
+    if employer.destroy
+      respond_to do |format|
+        format.html { redirect_to resume_employers_path(resume), notice: I18n.t("employer.destroyed") }
+        format.turbo_stream { flash.now[:notice] = I18n.t("employer.destroyed") }
+      end
+    else
+      flash.now[:alert] = I18n.t("employer.not_destroyed")
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   private

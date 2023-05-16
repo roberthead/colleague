@@ -1,5 +1,6 @@
 class Resume < ApplicationRecord
   belongs_to :user
+
   has_many :employers, dependent: :destroy
 
   before_validation :slugify

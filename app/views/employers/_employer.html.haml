@@ -1,0 +1,10 @@
+= turbo_frame_tag employer do
+  .employer
+    .employer__info
+      = employer.name
+    - if employer.location.present?
+      .employer__info.employer__info
+        = employer.location
+    - if employer.url.present?
+      .employer__info
+        = link_to(employer.url, employer.url, target: employer.name)
