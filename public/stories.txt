@@ -73,7 +73,14 @@ DONE
 Owner can add phone number to profile
 DONE
 
-Visitor sees meaningful info in the URL
+Owner can add one or more work experiences to a resume
+DONE
+
+Owner can update a work experience on a resume
+DONE
+
+Owner can delete a work experience from a resume
+DONE
 
 Owner can add one or more educational experiences to a resume
 
@@ -81,12 +88,7 @@ Owner can update an educational experience on a resume
 
 Owner can delete an educational experience from a resume
 
-Owner can add one or more work experiences to a resume
-IN PROGRESS
-
-Owner can update a work experience on a resume
-
-Owner can delete a work experience from a resume
+Visitor sees meaningful info in the URL
 
 Owner can add pronouns to profile
 
