@@ -14,6 +14,11 @@ en:
         field: Field of work
         phone: Phone number (override)
         profile: Profile or Summary
+      role:
+        accomplishements: Accomplishments
+        end_year: Year ended
+        start_year: Year started
+        title: Title
       user:
         admin: Admin
         email: Email address

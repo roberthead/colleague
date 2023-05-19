@@ -1,6 +1,8 @@
 class Employer < ApplicationRecord
   belongs_to :resume
 
+  has_many :roles, dependent: :destroy
+
   before_validation :slugify
 
   validates :name, presence: true
