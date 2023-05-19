@@ -7,4 +7,4 @@
         = employer.location
     - if employer.url.present?
       .employer__info
-        = link_to(employer.url, employer.url, target: employer.name)
+        = link_to(employer.smart_url, employer.smart_url, target: employer.name)

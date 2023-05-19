@@ -7,7 +7,7 @@
         = employer.location
     - if employer.url.present?
       .employer__info.employer__info--url
-        = link_to(employer.url, employer.url, target: employer.name)
+        = link_to(employer.smart_url, employer.smart_url, target: employer.name)
     .employer__actions
       = link_to 'Edit', edit_resume_employer_path(resume_id: employer.resume, id: employer), class: 'button'
       - confirmation_text = I18n.t('employer.confirm_destroy')
