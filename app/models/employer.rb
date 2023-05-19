@@ -3,6 +3,8 @@ class Employer < ApplicationRecord
 
   has_many :roles, dependent: :destroy
 
+  accepts_nested_attributes_for :roles, allow_destroy: true
+
   before_validation :slugify
 
   validates :name, presence: true

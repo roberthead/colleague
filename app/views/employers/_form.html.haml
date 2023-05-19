@@ -10,5 +10,23 @@
   .form__field
     = form.label :url, I18n.t('activerecord.attributes.employer.url')
     = form.text_field :url, class: 'form__input'
+  .form__section
+    %h4.form__section-header
+      = I18n.t('activerecord.models.role').pluralize
+    .form__section-content
+      = form.fields_for :roles do |role_form|
+        %fieldset.form__fieldset
+          .form__field
+            = role_form.label :title, I18n.t('activerecord.attributes.role.title')
+            = role_form.text_field :title
+          .form__field
+            = role_form.label :start_year, I18n.t('activerecord.attributes.role.start_year')
+            = role_form.text_field :start_year
+          .form__field
+            = role_form.label :end_year, I18n.t('activerecord.attributes.role.end_year')
+            = role_form.text_field :end_year
+          .form__field
+            = role_form.label :accomplishments, I18n.t('activerecord.attributes.role.accomplishments')
+            = role_form.text_area :accomplishments
   .form__actions
     = form.submit class: 'button'

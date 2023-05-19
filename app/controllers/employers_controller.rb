@@ -16,6 +16,7 @@ class EmployersController < ApplicationController
   end
 
   def edit
+    employer.roles.new if employer.roles.empty?
   end
 
   def create
@@ -87,6 +88,9 @@ class EmployersController < ApplicationController
   end
 
   def employer_params
-    params.require(:employer).permit(:name, :location, :url).merge(resume: resume)
+    params.require(:employer).permit(
+      :name, :location, :url,
+      roles_attributes: [:id, :title, :accomplishments, :start_year, :end_year, :_destroy]
+    ).merge(resume: resume)
   end
 end

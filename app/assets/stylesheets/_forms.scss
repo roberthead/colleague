@@ -31,3 +31,14 @@
     text-align: right;
   }
 }
+
+.form__fieldset {
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+
+  .form__field {
+    textarea {
+      height: 5rem !important;
+    }
+  }
+}

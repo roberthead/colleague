@@ -1,6 +1,8 @@
 @import 'variables';
 
 .resume {
+  margin: 1rem 0;
+
   &__header {
     display: flex;
     flex-direction: column;

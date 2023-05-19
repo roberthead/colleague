@@ -20,5 +20,5 @@
         .resume__section-content
           = turbo_frame_tag "employers" do
             - @resume.employers.each do |employer|
-              = render partial: 'resumes/employer_form', locals: { employer: }
+              = render partial: 'resumes/employer', locals: { employer: }
           = render partial: 'resumes/add_employer', locals: { resume: @resume }

@@ -15,6 +15,12 @@
           .role__info
             = role.title
           .role__info
-            = [role.start_year, "–", role.end_year].select(&:present?).join
+            = role.start_year
+            - if role.end_year.present?
+              = " – #{role.end_year}"
         .role__accomplishments
           = role.accomplishments
+    .employer__actions
+      = link_to 'Edit', edit_resume_employer_path(resume_id: employer.resume, id: employer), class: 'button'
+      - confirmation_text = I18n.t('employer.confirm_destroy')
+      = button_to I18n.t('resource.destroy'), [employer.resume, employer], method: :delete, data: { 'turbo-confirm': confirmation_text }, class: 'button'

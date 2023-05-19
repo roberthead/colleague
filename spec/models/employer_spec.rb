@@ -4,6 +4,8 @@ RSpec.describe Employer do
   describe "associations" do
     it { is_expected.to belong_to(:resume) }
     it { is_expected.to have_many(:roles) }
+
+    it { is_expected.to accept_nested_attributes_for(:roles) }
   end
 
   describe "validations" do

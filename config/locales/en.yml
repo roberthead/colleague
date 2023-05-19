@@ -15,7 +15,7 @@ en:
         phone: Phone number (override)
         profile: Profile or Summary
       role:
-        accomplishements: Accomplishments
+        accomplishments: Accomplishments
         end_year: Year ended
         start_year: Year started
         title: Title
@@ -29,6 +29,7 @@ en:
         remember_me: Remember me
     models:
       resume: Resume
+      role: Role
       user: User
   application:
     profile: Profile
