@@ -1,11 +1,8 @@
 require "rails_helper"
 
-RSpec.describe Employer do
+RSpec.describe School do
   describe "associations" do
     it { is_expected.to belong_to(:resume) }
-    it { is_expected.to have_many(:roles) }
-
-    it { is_expected.to accept_nested_attributes_for(:roles) }
   end
 
   describe "validations" do
@@ -13,19 +10,25 @@ RSpec.describe Employer do
   end
 
   describe "slugification" do
-    subject(:employer) { build(:employer, name: "Blush Magazine", resume: resume) }
+    subject(:school) { build(:school, name: "Blush Magazine", resume: resume) }
 
     let(:resume) { create(:resume) }
 
     specify do
       expect {
-        employer.valid?
-      }.to change(employer, :slug).from(be_blank).to("blush-magazine")
+        school.valid?
+      }.to change(school, :slug).from(be_blank).to("blush-magazine")
+    end
+
+    context "when saved" do
+      before { school.save }
+
+      its(:to_param) { is_expected.to eq "blush-magazine" }
     end
   end
 
   describe "urls" do
-    subject(:employer) { build(:employer, url:) }
+    subject(:school) { build(:school, url:) }
 
     context "when the url is blank" do
       let(:url) { "" }

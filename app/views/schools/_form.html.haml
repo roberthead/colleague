@@ -1,0 +1,23 @@
+- classes = "form form--school"
+= form_with model: [school.resume, school], class: classes do |form|
+  = render partial: 'shared/validation_errors', locals: { record: school }
+  .form__field
+    = form.label :name, I18n.t('activerecord.attributes.school.name')
+    = form.text_field :name, class: 'form__input'
+  .form__field
+    = form.label :location, I18n.t('activerecord.attributes.school.location')
+    = form.text_field :location, class: 'form__input'
+  .form__field
+    = form.label :url, I18n.t('activerecord.attributes.school.url')
+    = form.text_field :url, class: 'form__input'
+  .form__field
+    = form.label :major, I18n.t('activerecord.attributes.school.major')
+    = form.text_field :major, class: 'form__input'
+  .form__field
+    = form.label :degree, I18n.t('activerecord.attributes.school.degree')
+    = form.text_field :degree, class: 'form__input'
+  .form__field
+    = form.label :note, I18n.t('activerecord.attributes.school.note')
+    = form.text_field :note, class: 'form__input'
+  .form__actions
+    = form.submit class: 'button'

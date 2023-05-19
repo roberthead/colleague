@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_19_202313) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_19_224245) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -49,6 +49,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_19_202313) do
     t.index ["employer_id"], name: "index_roles_on_employer_id"
   end
 
+  create_table "schools", force: :cascade do |t|
+    t.bigint "resume_id", null: false
+    t.string "name", null: false
+    t.string "slug", null: false
+    t.string "location", default: "", null: false
+    t.string "url", default: "", null: false
+    t.string "major", default: "", null: false
+    t.string "degree", default: "", null: false
+    t.string "note", default: "", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["resume_id"], name: "index_schools_on_resume_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -67,4 +81,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_19_202313) do
   add_foreign_key "employers", "resumes"
   add_foreign_key "resumes", "users"
   add_foreign_key "roles", "employers"
+  add_foreign_key "schools", "resumes"
 end

@@ -22,3 +22,11 @@
             - @resume.employers.each do |employer|
               = render partial: 'resumes/employer', locals: { employer: }
           = render partial: 'resumes/add_employer', locals: { resume: @resume }
+      .resume__section
+        .resume__section-title
+          = I18n.t('resume.educational_experience')
+        .resume__section-content
+          = turbo_frame_tag "schools" do
+            - @resume.schools.each do |school|
+              = render partial: 'resumes/school', locals: { school: }
+          = render partial: 'resumes/add_school', locals: { resume: @resume }

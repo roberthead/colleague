@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :roles
   devise_for :users
 
   resource :landing
@@ -8,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :resumes do
     resources :employers
+    resources :schools
   end
 
   get "/resume", to: "resumes#show"

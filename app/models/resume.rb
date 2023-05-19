@@ -2,6 +2,7 @@ class Resume < ApplicationRecord
   belongs_to :user
 
   has_many :employers, dependent: :destroy
+  has_many :schools, dependent: :destroy
 
   before_validation :slugify
 

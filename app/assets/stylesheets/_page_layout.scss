@@ -9,13 +9,12 @@
 
 .page {
   position: relative;
-  padding: 0 1rem;
-  background-color: $paper-color;
+  margin: 0 auto;
+  border: 1px solid $paper-color;
   min-height: 100vh;
   max-width: $page-width;
-  margin: 0 auto;
-
-  isolation: isolate;
+  background-color: $paper-color;
+  padding: 0 1rem;
 }
 
 .turbo-progress-bar {

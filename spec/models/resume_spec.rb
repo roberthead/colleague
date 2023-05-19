@@ -4,6 +4,7 @@ RSpec.describe Resume do
   describe "associations" do
     it { is_expected.to belong_to(:user) }
     it { is_expected.to have_many(:employers) }
+    it { is_expected.to have_many(:schools) }
   end
 
   describe "slugification" do

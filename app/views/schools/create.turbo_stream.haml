@@ -1,0 +1,3 @@
+= turbo_stream.replace "messaging", partial: "layouts/messaging"
+= turbo_stream.append "schools", partial: "resumes/school", locals: { school: @school }
+= turbo_stream.replace "new_school", partial: "resumes/add_school", locals: { resume: @school.resume }

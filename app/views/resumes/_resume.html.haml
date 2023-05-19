@@ -25,6 +25,12 @@
           = I18n.t('resume.work_experience')
         .resume__section-content
           = render resume.employers
+    - if resume.schools.present?
+      .resume__section
+        .resume__section-title
+          = I18n.t('resume.educational_experience')
+        .resume__section-content
+          = render resume.schools
     - if policy(resume).edit? || policy(resume).destroy?
       .resume__actions
         - if policy(resume).edit?

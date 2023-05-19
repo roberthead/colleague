@@ -83,10 +83,13 @@ Owner can delete a work experience from a resume
 DONE
 
 Owner can add one or more educational experiences to a resume
+DONE
 
 Owner can update an educational experience on a resume
+DONE
 
 Owner can delete an educational experience from a resume
+DONE
 
 Visitor sees meaningful info in the URL
 
@@ -103,3 +106,6 @@ Visitor can see site at publicly available URL. #infrastructure
 Blog post about:
 `be rspec && rubocop -A && git add .`
 related to Kent Beck's experiments
+
+
+be rails g resource school resume:belongs_to name slug location url major degree note

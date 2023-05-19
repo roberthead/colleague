@@ -46,6 +46,10 @@
     justify-content: flex-start;
     gap: 1rem;
 
+    &:first-child {
+      margin-top: 0;
+    }
+
     form {
       display: inline;
     }

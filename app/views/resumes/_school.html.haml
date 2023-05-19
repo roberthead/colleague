@@ -1,0 +1,26 @@
+= turbo_frame_tag school do
+  .school
+    .school__info-line
+      .school__info
+        = school.name
+      - if school.location.present?
+        .school__info
+          = school.location
+      - if school.url.present?
+        .school__info
+          = link_to(school.display_url, school.full_url, target: school.name)
+    .school__info-line
+      - if school.degree.present? || school.major.present?
+        .school__info
+          - if school.degree.present?
+            = [school.degree.presence, ("(#{school.major})" if school.major.present?)].compact.join(" ")
+          - elsif school.major.present?
+            = I18n.t('school.coursework', major: school.major)
+    - if school.note.present?
+      .school__info-line
+        .school__info
+          = school.note
+    .school__actions
+      = link_to 'Edit', edit_resume_school_path(resume_id: school.resume, id: school), class: 'button'
+      - confirmation_text = I18n.t('school.confirm_destroy')
+      = button_to I18n.t('resource.destroy'), [school.resume, school], method: :delete, data: { 'turbo-confirm': confirmation_text }, class: 'button'
