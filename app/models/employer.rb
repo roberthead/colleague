@@ -13,14 +13,21 @@ class Employer < ApplicationRecord
     slug
   end
 
-  def smart_url
+  def full_url
     return if url.blank?
 
+    url = self.url.sub(/\/$/, "") # Remove trailing slash
     if /\Ahttps?:\/\//.match?(url)
       url
     else
       "https://#{url}"
     end
+  end
+
+  def display_url
+    return if url.blank?
+
+    full_url.gsub(/\Ahttps?:\/\/(www\.)?/, "")
   end
 
   private

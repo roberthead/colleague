@@ -1,6 +1,3 @@
 = turbo_frame_tag @employer do
   .employer
-    .employer__header
-      %h3
-        = I18n.t('employers.new.header')
     = render partial: 'form', locals: { employer: @employer }

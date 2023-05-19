@@ -22,25 +22,28 @@ RSpec.describe Employer do
     end
   end
 
-  describe "#smart_url" do
+  describe "urls" do
     subject(:employer) { build(:employer, url:) }
 
     context "when the url is blank" do
       let(:url) { "" }
 
-      its(:smart_url) { is_expected.to be_blank }
+      its(:full_url) { is_expected.to be_blank }
+      its(:display_url) { is_expected.to be_blank }
     end
 
     context "when the url contains a protocol" do
-      let(:url) { "https://www.bluey.tv" }
+      let(:url) { "https://www.bluey.tv/" }
 
-      its(:smart_url) { is_expected.to eq "https://www.bluey.tv" }
+      its(:full_url) { is_expected.to eq "https://www.bluey.tv" }
+      its(:display_url) { is_expected.to eq "bluey.tv" }
     end
 
     context "when the url does not contain a protocol" do
       let(:url) { "bluey.tv" }
 
-      its(:smart_url) { is_expected.to eq "https://bluey.tv" }
+      its(:full_url) { is_expected.to eq "https://bluey.tv" }
+      its(:display_url) { is_expected.to eq "bluey.tv" }
     end
   end
 end

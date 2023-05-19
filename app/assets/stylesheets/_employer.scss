@@ -3,6 +3,14 @@
 .employer {
   margin: 0 0 1rem 0;
 
+  &__info {
+    display: inline-block;
+
+    &:first {
+      font-weight: 600;
+    }
+  }
+
   &__actions {
     margin: 1rem 0;
     display: flex;
@@ -15,14 +23,8 @@
   }
 }
 
-@media (min-width: $desktop-breakpoint) {
-  .employer > * {
-    display: inline-block;
-  }
-
-  .employer__info + .employer__info {
-    &::before {
-      content: ' — ';
-    }
+.employer__info + .employer__info {
+  &::before {
+    content: " \00B7 ";
   }
 }

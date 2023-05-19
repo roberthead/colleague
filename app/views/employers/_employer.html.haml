@@ -1,10 +1,22 @@
 = turbo_frame_tag employer do
   .employer
-    .employer__info
-      = employer.name
-    - if employer.location.present?
-      .employer__info.employer__info
-        = employer.location
-    - if employer.url.present?
+    .employer__info-line
       .employer__info
-        = link_to(employer.smart_url, employer.smart_url, target: employer.name)
+        = employer.name
+      - if employer.location.present?
+        .employer__info
+          = employer.location
+      - if employer.url.present?
+        .employer__info
+          = link_to(employer.display_url, employer.full_url, target: employer.name)
+    - employer.roles.each do |role|
+      .role
+        .role__info-line
+          .role__info
+            = role.title
+          .role__info
+            = role.start_year
+            - if role.end_year.present?
+              = " – #{role.end_year}"
+        .role__accomplishments
+          = role.accomplishments

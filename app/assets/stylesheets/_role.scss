@@ -1,0 +1,23 @@
+@import 'variables';
+
+.role {
+  margin: 0 0 1rem 1rem;
+
+  &__info-line {
+    font-style: italic;
+  }
+
+  &__info {
+    display: inline-block;
+
+    &:first {
+      font-weight: 600;
+    }
+  }
+}
+
+.role__info + .role__info {
+  &::before {
+    content: " \00B7 ";
+  }
+}
