@@ -175,9 +175,32 @@ RSpec.describe "Schools" do
         login_as(user, scope: :user)
       end
 
-      specify do
-        delete "/resumes/#{resume.slug}/schools/#{school.slug}"
-        expect(response).to redirect_to(resume_schools_path(resume))
+      context "when destroy succeeds" do
+        specify do
+          delete "/resumes/#{resume.slug}/schools/#{school.slug}"
+          expect(response).to redirect_to(resume_schools_path(resume))
+        end
+      end
+
+      context "when destroy fails" do
+        before do
+          allow_any_instance_of(School).to receive(:destroy).and_return(false)
+        end
+
+        specify do
+          delete "/resumes/#{resume.slug}/schools/#{school.slug}"
+          expect(response).to render_template(:edit)
+        end
+
+        specify do
+          delete "/resumes/#{resume.slug}/schools/#{school.slug}"
+          expect(response).to have_http_status(:unprocessable_entity)
+        end
+
+        specify do
+          delete "/resumes/#{resume.slug}/schools/#{school.slug}"
+          expect(flash.now[:alert]).to eq "Educational experience not removed."
+        end
       end
     end
   end

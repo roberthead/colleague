@@ -54,7 +54,7 @@ RSpec.describe "Employers" do
 
         specify do
           get "/resumes/#{resume.slug}/employers/foo"
-          expect(flash[:alert]).to eq "Employer not found."
+          expect(flash[:alert]).to eq "Work experience not found."
         end
       end
     end
@@ -163,7 +163,7 @@ RSpec.describe "Employers" do
 
         specify do
           patch "/resumes/#{resume.slug}/employers/#{employer.slug}", params: {employer: {name: ""}}
-          expect(flash.now[:alert]).to eq "Employer not updated."
+          expect(flash.now[:alert]).to eq "Work experience not updated."
         end
       end
     end
@@ -175,9 +175,22 @@ RSpec.describe "Employers" do
         login_as(user, scope: :user)
       end
 
-      specify do
-        delete "/resumes/#{resume.slug}/employers/#{employer.slug}"
-        expect(response).to redirect_to(resume_employers_path(resume))
+      context "when destroy succeeds" do
+        specify do
+          delete "/resumes/#{resume.slug}/employers/#{employer.slug}"
+          expect(response).to redirect_to(resume_employers_path(resume))
+        end
+      end
+
+      context "when destroy fails" do
+        before do
+          allow_any_instance_of(Employer).to receive(:destroy).and_return(false)
+        end
+
+        specify do
+          delete "/resumes/#{resume.slug}/employers/#{employer.slug}"
+          expect(flash[:alert]).to eq "Work experience not deleted."
+        end
       end
     end
   end

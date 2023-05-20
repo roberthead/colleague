@@ -46,15 +46,15 @@ en:
     sign_out: Sign out
   employer:
     confirm_destroy: Are you sure you want to delete this employer?
-    created: Employer created.
+    created: Work experience created.
     destroy: Delete
-    destroyed: Employer deleted.
-    not_authorized: Not authorized to manage this employer.
-    not_created: Employer not created.
-    not_destroyed: Employer not deleted.
-    not_found: Employer not found.
-    not_updated: Employer not updated.
-    updated: Employer updated.
+    destroyed: Work experience deleted.
+    not_authorized: Not authorized to manage this work experience.
+    not_created: Work experience not created.
+    not_destroyed: Work experience not deleted.
+    not_found: Work experience not found.
+    not_updated: Work experience not updated.
+    updated: Work experience updated.
   employers:
     new:
       header: New Employer
@@ -100,3 +100,4 @@ en:
     updated: Educational experience updated.
     not_found: Educational experience not found.
     not_updated: Educational experience not updated.
+    not_destroyed: Educational experience not removed.
