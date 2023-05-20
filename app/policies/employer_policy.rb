@@ -21,10 +21,5 @@ class EmployerPolicy < ApplicationPolicy
   end
 
   class Scope < Scope
-    def resolve
-      return scope.none unless user
-
-      scope.where(resume_id: user.resume_ids)
-    end
   end
 end

@@ -51,7 +51,7 @@ RSpec.describe EmployerPolicy do
     before { record }
 
     specify { expect(Pundit.policy_scope!(owner, Employer)).to eq([record]) }
-    specify { expect(Pundit.policy_scope!(user, Employer)).to eq([]) }
-    specify { expect(Pundit.policy_scope!(visitor, Employer)).to eq([]) }
+    specify { expect(Pundit.policy_scope!(user, Employer)).to eq([record]) }
+    specify { expect(Pundit.policy_scope!(visitor, Employer)).to eq([record]) }
   end
 end
