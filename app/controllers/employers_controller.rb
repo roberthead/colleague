@@ -5,7 +5,7 @@ class EmployersController < ApplicationController
   before_action :require_employer, only: %i[show edit update destroy]
 
   def index
-    @employers = resume.employers
+    @employers = resume.employers.sort_by(&:sort_value)
   end
 
   def show

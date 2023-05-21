@@ -115,6 +115,8 @@ DONE
 Owner can add portfolio site to resume
 DONE
 
+Sort work experience by [start-year, end-year || next-year] descending
+DONE
 
 Admin can publish a blog post
 

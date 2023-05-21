@@ -19,7 +19,7 @@
           = I18n.t('resume.work_experience')
         .resume__section-content
           = turbo_frame_tag "employers" do
-            - @resume.employers.each do |employer|
+            - @resume.employers.sort_by(&:sort_value).each do |employer|
               = render partial: 'resumes/employer', locals: { employer: }
           = render partial: 'resumes/add_employer', locals: { resume: @resume }
       .resume__section

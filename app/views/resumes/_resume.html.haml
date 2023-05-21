@@ -30,7 +30,7 @@
         .resume__section-title
           = I18n.t('resume.work_experience')
         .resume__section-content
-          = render resume.employers
+          = render resume.employers.sort_by(&:sort_value)
     - if resume.schools.present?
       .resume__section
         .resume__section-title
