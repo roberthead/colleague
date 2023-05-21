@@ -8,12 +8,15 @@
     = form.text_field :alias_name, placeholder: resume.user&.name
   .form__field
     = form.label :email
-    = form.text_field :email, placeholder: resume.user&.email
+    = form.text_field :email, value: resume.read_attribute(:email), placeholder: resume.user&.email
   .form__field
     = form.label :phone
-    = form.text_field :phone, placeholder: resume.user&.phone
+    = form.text_field :phone, value: resume.read_attribute(:phone), placeholder: resume.user&.phone
+  .form__field
+    = form.label :portfolio_url
+    = form.text_field :portfolio_url, value: resume.read_attribute(:portfolio_url), placeholder: resume.user&.portfolio_url
   .form__field
     = form.label :preferred_pronouns
-    = form.text_field :preferred_pronouns
+    = form.text_field :preferred_pronouns, value: resume.read_attribute(:preferred_pronouns), placeholder: resume.user&.preferred_pronouns
   .form__actions
     = form.submit 'Save', class: 'button'

@@ -69,7 +69,7 @@ class ResumesController < ApplicationController
 
   def resume_params
     params.require(:resume).permit(
-      :field, :profile, :email, :phone, :alias_name, :preferred_pronouns
+      :field, :profile, :email, :phone, :alias_name, :preferred_pronouns, :portfolio_url
     )
   end
 end

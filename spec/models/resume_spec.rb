@@ -92,4 +92,29 @@ RSpec.describe Resume do
       end
     end
   end
+
+  describe "portfolio urls" do
+    subject(:resume) { build(:resume, portfolio_url:) }
+
+    context "when the url is blank" do
+      let(:portfolio_url) { "" }
+
+      its(:full_portfolio_url) { is_expected.to be_blank }
+      its(:display_portfolio_url) { is_expected.to be_blank }
+    end
+
+    context "when the url contains a protocol" do
+      let(:portfolio_url) { "https://github.com/myusername" }
+
+      its(:full_portfolio_url) { is_expected.to eq "https://github.com/myusername" }
+      its(:display_portfolio_url) { is_expected.to eq "github.com/myusername" }
+    end
+
+    context "when the url does not contain a protocol" do
+      let(:portfolio_url) { "github.com/myusername" }
+
+      its(:full_portfolio_url) { is_expected.to eq "https://github.com/myusername" }
+      its(:display_portfolio_url) { is_expected.to eq "github.com/myusername" }
+    end
+  end
 end

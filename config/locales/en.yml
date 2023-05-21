@@ -13,6 +13,7 @@ en:
         email: Email address (override)
         field: Field of work
         phone: Phone number (override)
+        portfolio_url: Portfolio URL (override)
         preferred_pronouns: Preferred pronouns (override)
         profile: Profile or Summary
       role:
@@ -34,6 +35,7 @@ en:
         password: Password
         password_confirmation: Password confirmation
         phone: Phone number
+        portfolio_url: Portfolio URL
         preferred_pronouns: Preferred pronouns
         remember_me: Remember me
     models:

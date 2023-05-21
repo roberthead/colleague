@@ -109,7 +109,12 @@ DONE
 Owner can add / override pronouns on resume
 DONE
 
-Owner can add portfolio site
+Owner can add portfolio site to profile
+DONE
+
+Owner can add portfolio site to resume
+DONE
+
 
 Admin can publish a blog post
 
