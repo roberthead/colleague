@@ -6,3 +6,7 @@
     = I18n.t("resumes.index.empty")
 - else
   = render @resumes
+
+- if current_user
+  .resume__actions
+    = link_to I18n.t("resumes.index.new"), new_resume_path, :class => "button"

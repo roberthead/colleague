@@ -91,6 +91,9 @@ DONE
 Owner can delete an educational experience from a resume
 DONE
 
+User can start a new resume
+DONE
+
 Visitor sees meaningful info in the URL
 
 Owner can add pronouns to profile

@@ -3,4 +3,8 @@
     .resume__header
       %h2
         = I18n.t('resumes.new.header')
-    = render partial: 'overview_form', locals: { resume: @resume }
+    .resume__section
+      .resume__section-title
+        = I18n.t('resume.overview')
+      .resume__section-content
+        = render partial: 'overview_form', locals: { resume: @resume }
