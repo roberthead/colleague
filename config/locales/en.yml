@@ -68,6 +68,7 @@ en:
     destroy_resource: Delete %{resource}
     edit: Edit
     edit_resource: Edit %{resource}
+    show_resource: View %{resource}
   resume:
     confirm_destroy: Are you sure you want to delete this resume?
     created: Resume created.
@@ -89,8 +90,8 @@ en:
     new:
       header: New Resume
     edit:
-      add_employer: Add employer…
-      add_school: Add school…
+      add_employer: Add work experience…
+      add_school: Add educational experience…
       header: Edit Resume
       overview_form_header: Overview
   school:

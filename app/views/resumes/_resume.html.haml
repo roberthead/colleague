@@ -31,12 +31,14 @@
           = I18n.t('resume.educational_experience')
         .resume__section-content
           = render resume.schools
-    - if policy(resume).edit? || policy(resume).destroy?
-      .resume__actions
-        - if policy(resume).edit?
-          - button_text = I18n.t('resource.edit_resource', resource: I18n.t('activerecord.models.resume'))
-          = link_to button_text, edit_resume_path(id: resume.slug), class: 'button'
-        - if policy(resume).destroy?
-          - button_text = I18n.t('resource.destroy_resource', resource: I18n.t('activerecord.models.resume'))
-          - confirmation_text = I18n.t('resume.confirm_destroy')
-          = button_to button_text, resume, method: :delete, data: { 'turbo-confirm': confirmation_text }, class: 'button'
+    .resume__actions
+      - unless current_page?(resume_path(id: resume.slug))
+        - button_text = I18n.t('resource.show_resource', resource: I18n.t('activerecord.models.resume'))
+        = link_to button_text, resume_path(id: resume.slug), class: 'button', data: { turbo: false }
+      - if policy(resume).edit?
+        - button_text = I18n.t('resource.edit_resource', resource: I18n.t('activerecord.models.resume'))
+        = link_to button_text, edit_resume_path(id: resume.slug), class: 'button'
+      - if policy(resume).destroy?
+        - button_text = I18n.t('resource.destroy_resource', resource: I18n.t('activerecord.models.resume'))
+        - confirmation_text = I18n.t('resume.confirm_destroy')
+        = button_to button_text, resume, method: :delete, data: { 'turbo-confirm': confirmation_text }, class: 'button'

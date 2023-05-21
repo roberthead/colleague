@@ -94,15 +94,20 @@ DONE
 User can start a new resume
 DONE
 
+Visitor can view resume
+DONE
+
 Visitor sees meaningful info in the URL
+DONE
+
+Visitor can see site at publicly available URL. #infrastructure
+DONE (rob-head.herokuapp.com)
 
 Owner can add pronouns to profile
 
 Owner can add / override pronouns on resume
 
 Admin can publish a blog post
-
-Visitor can see site at publicly available URL. #infrastructure
 
 
 
