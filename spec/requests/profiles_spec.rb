@@ -23,14 +23,28 @@ RSpec.describe "Profiles" do
       end
 
       context "with valid params" do
+        let(:valid_params) do
+          {user: {name: "Lila Emerson", preferred_pronouns: "she/they"}}
+        end
+
         specify do
-          patch "/profile", params: {user: {name: "Lila Emerson"}}
+          patch "/profile", params: valid_params
           expect(response).to redirect_to(profile_path)
         end
 
         specify do
-          patch "/profile", params: {user: {name: "Lila Emerson"}}
+          patch "/profile", params: valid_params
           expect(flash[:notice]).to be_present
+        end
+
+        specify do
+          patch "/profile", params: valid_params
+          expect(user.reload.name).to eq("Lila Emerson")
+        end
+
+        specify do
+          patch "/profile", params: valid_params
+          expect(user.reload.preferred_pronouns).to eq("she/they")
         end
       end
 

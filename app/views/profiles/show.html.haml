@@ -16,5 +16,8 @@
       %div{ class: bem("form", "field", "phone") }
         = form.label :phone
         = form.text_field :phone
+      %div{ class: bem("form", "field", "preferred-pronouns") }
+        = form.label :preferred_pronouns
+        = form.text_field :preferred_pronouns
       %div{ class: bem("form", "actions") }
         = form.submit "Save"
