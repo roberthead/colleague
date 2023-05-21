@@ -12,7 +12,8 @@ class EmployersController < ApplicationController
   end
 
   def new
-    @employer = resume.employers.new
+    @employer = Employer.new(resume_id: resume.id)
+    @employer.roles.new
   end
 
   def edit

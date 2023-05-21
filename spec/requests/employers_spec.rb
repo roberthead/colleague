@@ -76,6 +76,11 @@ RSpec.describe "Employers" do
           get "/resumes/#{resume.slug}/employers/new"
           expect(assigns(:employer)).to be_a_new(Employer)
         end
+
+        specify do
+          get "/resumes/#{resume.slug}/employers/new"
+          expect(assigns(:employer).roles.length).to eq 1
+        end
       end
     end
 
