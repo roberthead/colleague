@@ -1,6 +1,9 @@
 = turbo_frame_tag resume do
   .resume
     .resume__header
+      - if resume.preferred_pronouns.present?
+        %span{ class: bem("resume", "preferred-pronouns") }
+          = resume.preferred_pronouns
       %h2
         = resume.name
       - if resume.field

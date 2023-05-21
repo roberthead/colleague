@@ -12,5 +12,8 @@
   .form__field
     = form.label :phone
     = form.text_field :phone, placeholder: resume.user&.phone
+  .form__field
+    = form.label :preferred_pronouns
+    = form.text_field :preferred_pronouns
   .form__actions
     = form.submit 'Save', class: 'button'

@@ -4,6 +4,7 @@
   margin: 1rem 0;
 
   &__header {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,6 +13,15 @@
     h2, h3.subheader {
       margin: 0;
     }
+  }
+
+  &__preferred-pronouns {
+    position: absolute;
+    right: 0;
+    line-height: 2.5rem;
+    font-size: 1rem;
+    font-weight: normal;
+    color: $softened-text;
   }
 
   &__contact-info {

@@ -63,4 +63,33 @@ RSpec.describe Resume do
       its(:email) { is_expected.to eq "joe99@example.com" }
     end
   end
+
+  describe "#preferred_pronouns" do
+    context "when neither the user nor the resume has pronouns" do
+      let(:user) { create(:user) }
+      let(:resume) { create(:resume, user: user) }
+
+      specify do
+        expect(resume.preferred_pronouns).to be_blank
+      end
+    end
+
+    context "when the user has pronouns and the resume does not" do
+      let(:user) { create(:user, preferred_pronouns: "he/him") }
+      let(:resume) { create(:resume, user:) }
+
+      it "returns the user's pronouns" do
+        expect(resume.preferred_pronouns).to eq("he/him")
+      end
+    end
+
+    context "when the user has pronouns and the resume also does" do
+      let(:user) { create(:user, preferred_pronouns: "he/him") }
+      let(:resume) { create(:resume, user:, preferred_pronouns: "he/they") }
+
+      it "returns the resume's pronouns" do
+        expect(resume.preferred_pronouns).to eq("he/they")
+      end
+    end
+  end
 end

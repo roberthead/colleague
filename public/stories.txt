@@ -104,8 +104,12 @@ Visitor can see site at publicly available URL. #infrastructure
 DONE (rob-head.herokuapp.com)
 
 Owner can add pronouns to profile
+DONE
 
 Owner can add / override pronouns on resume
+DONE
+
+Owner can add portfolio site
 
 Admin can publish a blog post
 

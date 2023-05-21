@@ -14,6 +14,10 @@ class Resume < ApplicationRecord
     super.presence || user.email
   end
 
+  def preferred_pronouns
+    super.presence || user.preferred_pronouns
+  end
+
   def name
     alias_name.presence || user&.name
   end

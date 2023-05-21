@@ -13,6 +13,7 @@ en:
         email: Email address (override)
         field: Field of work
         phone: Phone number (override)
+        preferred_pronouns: Preferred pronouns (override)
         profile: Profile or Summary
       role:
         accomplishments: Accomplishments

@@ -143,7 +143,8 @@ RSpec.describe "Resumes" do
         {
           resume: {
             field: "Web Development",
-            profile: "I am a web developer that can help you build stuff"
+            profile: "I am a web developer that can help you build stuff",
+            preferred_pronouns: "they/them"
           }
         }
       end
@@ -152,9 +153,27 @@ RSpec.describe "Resumes" do
         login_as(user, scope: :user)
       end
 
-      specify do
-        post "/resumes", params: params
-        expect(response).to redirect_to(assigns(:resume))
+      context "when save succeeds" do
+        specify do
+          expect {
+            post "/resumes", params: params
+          }.to change(Resume, :count).by(1)
+        end
+
+        specify do
+          post "/resumes", params: params
+          expect(response).to redirect_to(assigns(:resume))
+        end
+
+        specify do
+          post "/resumes", params: params
+          expect(flash[:notice]).to eq "Resume created."
+        end
+
+        specify do
+          post "/resumes", params: params
+          expect(Resume.last.preferred_pronouns).to eq "they/them"
+        end
       end
 
       context "when save fails" do
