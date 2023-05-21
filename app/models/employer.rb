@@ -47,7 +47,7 @@ class Employer < ApplicationRecord
   end
 
   def smart_end_year
-    roles.map(&:end_year).compact.max || default_end_year
+    roles.map(&:smart_end_year).compact.max || default_end_year
   end
 
   def default_start_year
