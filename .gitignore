@@ -32,3 +32,6 @@
 
 # Ignore spec coverage files
 /coverage/*
+
+# Ignore dotenv file
+.env
