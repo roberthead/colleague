@@ -119,7 +119,12 @@ Sort work experience by [start-year, end-year || next-year] descending
 DONE
 
 Admin can configure landing page to redirect to a particular URL.
+DONE
 
+Coders can see README explanation of Project
+DONE
+
+Visitor can see footer with explanation and link to project.
 
 Admin can publish a blog post
 
