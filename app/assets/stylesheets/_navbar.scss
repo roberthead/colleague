@@ -49,5 +49,9 @@ li.navbar__menu-item {
     border-radius: 0.25rem;
     font-weight: 600;
     color: $primary-color;
+
+    &.button {
+      border-color: $primary-color;
+    }
   }
 }
