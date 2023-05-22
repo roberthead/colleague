@@ -15,7 +15,7 @@ en:
         phone: Phone number (override)
         portfolio_url: Portfolio URL (override)
         preferred_pronouns: Preferred pronouns (override)
-        profile: Profile or Summary
+        summary: Summary
       role:
         accomplishments: Accomplishments
         end_year: Year ended
@@ -84,7 +84,7 @@ en:
     not_found: Resume not found.
     not_updated: Resume not updated.
     overview: Overview
-    profile: Profile
+    summary: Summary
     updated: Resume updated.
     work_experience: Experience
   resumes:

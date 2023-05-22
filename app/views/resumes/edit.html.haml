@@ -10,9 +10,9 @@
         = render partial: 'overview_form', locals: { resume: @resume }
     .resume__section
       .resume__section-title
-        = I18n.t('resume.profile')
+        = I18n.t('resume.summary')
       .resume__section-content
-        = render partial: 'profile_form', locals: { resume: @resume }
+        = render partial: 'summary_form', locals: { resume: @resume }
     - if @resume.persisted?
       .resume__section
         .resume__section-title

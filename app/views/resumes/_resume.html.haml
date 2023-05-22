@@ -19,12 +19,12 @@
       - if resume.portfolio_url.present?
         %div{ class: bem("resume", "contact-info-item", "portfolio_url") }
           = link_to(resume.display_portfolio_url, resume.full_portfolio_url, target: 'portfolio')
-    - if resume.profile.present?
+    - if resume.summary.present?
       .resume__section
         .resume__section-title
-          = I18n.t('resume.profile')
+          = I18n.t('resume.summary')
         .resume__section-content
-          = resume.profile
+          = resume.summary
     - if resume.employers.present?
       .resume__section
         .resume__section-title
