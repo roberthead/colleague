@@ -118,6 +118,9 @@ DONE
 Sort work experience by [start-year, end-year || next-year] descending
 DONE
 
+Admin can configure landing page to redirect to a particular URL.
+
+
 Admin can publish a blog post
 
 

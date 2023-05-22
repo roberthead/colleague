@@ -12,5 +12,9 @@ Rails.application.routes.draw do
 
   get "/resume", to: "resumes#show"
 
-  root "landings#show"
+  if ENV["LANDING_PAGE_REDIRECT"].present?
+    root to: redirect("/resumes/robert-emerson-head-web-development", status: 302)
+  else
+    root "landings#show"
+  end
 end
