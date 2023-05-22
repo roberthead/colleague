@@ -1,6 +1,6 @@
 en:
   site:
-    name: Colleague
+    name: Colleagues
     tagline: Let's work, together
   activerecord:
     attributes:
