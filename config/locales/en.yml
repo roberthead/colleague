@@ -64,6 +64,8 @@ en:
       header: New Employer
     edit:
       header: Edit Employer
+  footer:
+    source_code_label: "Source code:"
   profile:
     not_updated: Profile not updated.
     updated: Profile updated.

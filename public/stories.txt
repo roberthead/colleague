@@ -125,6 +125,7 @@ Coders can see README explanation of Project
 DONE
 
 Visitor can see footer with explanation and link to project.
+DONE
 
 Admin can publish a blog post
 
